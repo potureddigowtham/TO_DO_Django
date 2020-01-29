@@ -1,0 +1,24 @@
+<style>
+h3 {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  right: 5px;
+}
+</style>
+
+  <div class="card mt-3">
+  <div class="card-body">
+    <h3> {{ note_snippet_var.title}} <span class="badge badge-{{ note_snippet_var.get_label_display }}">{{ note_snippet_var.due_date }}</span>
+    <span class="icon">
+    {% if type == "remove" %}
+    <a href="{{ note_snippet_var.get_finish_item_url }}"><i class="fas fa-check" style="color:green;"></i></a>
+    {% else %}
+    <a href="{{ note_snippet_var.get_not_finish_item_url }}"><i class="fas fa-times" style="color:purple;"></i></a>
+    {% endif %}
+    <a href="{{ note_snippet_var.get_delete_item_url }}"><i class="fas fa-trash" style="color:red;"></i></a>
+    </h3>
+  </div>
+  </div>
